@@ -1,2 +1,4 @@
 FROM redis:alpine
-CMD ["redis-server"]
+COPY ./redis.conf /usr/local/redis.conf
+USER 1001
+CMD ["redis-server", "/usr/local/redis.conf"]
